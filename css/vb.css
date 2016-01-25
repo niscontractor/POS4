@@ -1,0 +1,114 @@
+h4.head{  color: #0d4fa6;font-size: 50px;letter-spacing: 3px;margin-bottom: 20px;   margin-top: 40px;}
+.start_bt{background: #00479f none repeat scroll 0 0;border: medium none;border-radius: 7px;color: #fff;font-size: 25px;margin-bottom: 20px;   margin-top:40px;padding: 6px;  width: 130px;}
+.lightblue{background: #dee7f0 none repeat scroll 0 0; min-height: 535px;padding-top: 25px;}
+.form-group1{margin-left:15px;}
+.ui-slider{   height: 16px;
+    margin-top: 10px;width:170px;}
+.ui-widget-header	{height:16px;}
+.border_vb{border-right:2px solid #000; min-height:490px; }
+.border-top-vb{border-top:2px solid #000;margin-top:30px;}
+.vb_select{border:none;border-bottom:1px solid #000!important; width:auto; margin-top:5px; appearance:none;    -moz-appearance:none;-webkit-appearance:none;background:url('../images/ic.png') no-repeat center right;box-shadow:none!important;;border-radius:0 !important;font-size:15px;color:#000;margin-top:0px;width:350px;}
+
+
+.location{font-size:18px; margin-bottom:5px;}
+.location-main{ margin-bottom:60px!important; }
+.customized{ font-size:35px; padding-bottom:10px;}
+.easiest{ font-size:20px; padding-bottom:30px;}
+.apply{ font-size:30px; color:#000;}
+.name{ text-align:right;}
+.margin{ margin-top:30px; float:left;}
+.margin-left{ margin-left:-52px;}
+
+
+
+/* 1024 */
+@media only screen and ( max-width: 1199px ) {
+	.container{ width:100%!important;}
+	#startYear{ margin-top:30px !important}
+}
+
+
+/* 768 */
+@media only screen and ( max-width: 1023px ) {
+	#startYear{ margin-top:0px !important}
+	.location-main{ margin-bottom:60px!important;  display:flex;}
+	.border_vb{ border:none;}
+	h4.head{ float:left;}
+	.start_bt{ float:right;}
+	#cardNumber{ width:100%!important;}
+	#cardExpiryMonth{ width:100%!important;}
+	#cardSecurityCode{ width:100%!important;}
+	#cardName{ width:100%!important;}
+	.margin-left{ margin-left:0px;}
+
+	
+	
+
+}
+
+/* 736 */
+@media only screen and ( max-width: 767px ) {
+	.location-main{ margin-bottom:60px!important;  display:block;}
+	h4.head{ float:left;}
+	.start_bt{ float:right;}
+	.rate{ font-size:40px!important; line-height:80px!important;}
+	.name{ text-align:left;}
+	#name{ width:100%!important;}
+	#businessName{ width:100%!important;}
+	#address{ width:100%!important;}
+	#email{ width:100%!important;}
+	#reportingSector{width:100%!important;}
+	
+
+	
+}
+
+/* 667 */
+@media only screen and ( max-width: 735px ) {
+	
+	
+}
+
+/* 600 */
+@media only screen and ( max-width: 666px ) {
+	.information{ font-size:28px;}
+	
+}
+
+/* 568 */
+@media only screen and ( max-width: 599px ) {
+	
+}
+
+/* 480 */
+@media only screen and ( max-width: 567px ) {
+	.start_bt{ margin-top:10px;}
+	
+}
+
+/* 414 */
+@media only screen and ( max-width: 479px ) {
+	.customized{ font-size:26px;}
+	.easiest{ font-size:16px;}
+	#btnContractReview{ float:left!important; margin:10px 0!important;}
+	#btnContractReviewback{float:left!important; margin-bottom:30px!important;}
+	
+	
+}
+
+/* 375 */
+@media only screen and ( max-width: 413px ) {
+	
+	h4.head{ font-size:46px;}
+	
+}
+
+/* 320 */
+@media only screen and ( max-width: 374px ) {
+	h4.head{ font-size:37px;}
+	.ng-binding{ margin-left:0px!important; }
+	.apply{ font-size:24px; }
+
+	
+	
+}

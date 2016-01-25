@@ -1,0 +1,149 @@
+<div class="main_section" ng-init="companies.initPaymentPage()">
+
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate>
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                        <br/><br/>&nbsp;
+                        <div class="clearfix"></div>
+                        <div class="col-md-7 border_vb">
+                            <center>
+                                <br/><br/><br/><br/><br/><br/>
+                                <h3>
+                                    <div class="col-md-12" style="margin-top:15px;">
+                                        <div class="col-md-5" align="right">
+                                            I'm paying with
+                                        </div>
+                                        <div class="col-md-6" align="left">
+                                            <input type="text" id="name" name="name" class="col-md-4" ng-model="companies.paymentObj.cardType" style="border:none;border-bottom:1px solid #000 ; width:100%;" />
+                                        </div>
+
+                                    </div>
+                                    <br/>
+                                    <div class="col-md-12" style="margin-top:20px;" ng-if="companies.paymentObj.cardType != null && companies.paymentObj.cardType != ''">
+
+                                        <div class="col-md-3" align="right">
+                                            number
+                                        </div>
+
+                                        <div class="col-md-4 padding0">
+                                            <input type="text" id="cardNumber" name="cardNumber" maxlength="16" class="control" ng-model="companies.paymentObj.cardNumber" style="border:none;border-bottom:1px solid #000 ; width:200px;margin-right: 5px"/>
+                                        </div>
+                                        <div class="col-md-5 padding0"  ng-if="companies.paymentObj.cardNumber != null && companies.paymentObj.cardNumber != ''" style="text-align:left;">
+                                            which expires on
+                                        </div>
+                                        <!--<div class="col-md-3" align="right">
+                                        </div>-->
+                                    </div>
+                                    <br/>
+                                    <div class="col-md-12" style="margin-top:20px;">
+
+                                        <div class="col-md-3" align="right" ng-if="companies.paymentObj.cardNumber != null && companies.paymentObj.cardNumber != ''">
+                                            <input type="text" id="cardExpiryMonth" name="cardExpiryMonth" class="control" ng-model="companies.paymentObj.cardExpiryMonth" numbers-only style="border:none;border-bottom:1px solid #000 ; width:100%;"/>
+                                        </div>
+                                        <div class="col-md-6" align="left" style="padding-left: 0px !important" ng-if="companies.paymentObj.cardExpiryMonth != null && companies.paymentObj.cardExpiryMonth != ''">
+                                            . The card securiy code is
+                                        </div>
+                                        <div class="col-md-3 padding0" align="left"  ng-if="companies.paymentObj.cardExpiryMonth != null && companies.paymentObj.cardExpiryMonth != ''">
+                                            <input type="text" id="cardSecurityCode" name="cardSecurityCode" class="control" ng-model="companies.paymentObj.cardSecurityCode" numbers-only style="border:none;border-bottom:1px solid #000 ; width:100%;"/>
+                                        </div>
+                                        <!--<div class="col-md-1">
+
+                                        </div>-->
+                                    </div>
+                                    <br/>
+                                    <div class="col-md-12" style="margin-top:20px;" ng-if="companies.paymentObj.cardSecurityCode != null && companies.paymentObj.cardSecurityCode != ''">
+                                        <div class="col-md-7" align="right">
+                                            and the name on the card is 
+                                        </div>
+                                        <div class="col-md-5" align="left">
+                                            <input type="text" id="cardName" name="cardName" class="control" ng-model="companies.paymentObj.cardName" style="border:none;border-bottom:1px solid #000 ; width:100%;"/>
+                                        </div>
+
+                                    </div>
+                                    <br/>
+                                </h3>
+                                <br/><br/><br/>
+                                <div class="form-group col-md-12" >
+                                    <div class="col-md-12" >
+                                        <button type="button" id="btnContractReviewback" style="width: 150px" class="start_bt pull-left" ng-click="companies.backButtonForreviewInsurance()" >Back</button>
+                                        <button type="button" id="btnContractReview" style="float: right" ng-click="companies.navigateToThankyouPage()" class="start_bt pull-right" >Done</button>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
+                                </div>
+                            </center>
+                            <br/>
+                            <div class="clearfix"></div> 
+                        </div>  
+                    </div>
+                   
+                    <div class="col-md-5" >
+                                <div class="col-md-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="col-md-12" style="font-size: 40px;" >
+                                        <div class="estim">Estimated Rate <br/></div>
+                                        <span style="font-size: 70px;margin-left: 40px;">${{companies.estimatedRateObject.rate}}</span>
+                                        <span style="font-size:20px">/ month</span>
+                                    </div>
+                                    <div class="col-md-12" style="font-size: 40px" >
+                                        <div class="apply">Applied discounts <br/><br/></div>
+
+                                        <!--<p style="font-size: 30px">$ 70 / month</p>-->
+                                    </div>
+                                    <div class="col-md-12"  >
+                                        <div style="font-size: 23px;">
+                                            Coverage 
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePlFlag"> PL: $ {{companies.estimatedRateObject.coveragePl}} /month
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coverageGlFlag"> GL: $ {{companies.estimatedRateObject.coverageGl}} /month
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePropertyFlag"> Property: $ {{companies.estimatedRateObject.coverageProperty}} /month
+                                        </div>
+                                        <div>
+                                            (todo: think of better names)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <br/><br/><br/>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+</script>

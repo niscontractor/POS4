@@ -1,0 +1,135 @@
+<div class="main_section" ng-init="companies.initPurchaseInsurance()">
+
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate>
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                        <br/><br/>&nbsp;
+                        <div class="clearfix"></div>
+                        <center>
+                            <h1 class="information">
+                                Information to appear on the policy: <br/>   
+                            </h1>
+                            <h3>
+                                <div class="col-md-12" style="margin-top:15px;">
+                                    <div class="col-sm-5" style="text-align:right;">
+                                        My name is
+                                    </div>
+                                    <div class="col-sm-6" style="text-align:left;">
+                                        <input type="text" id="name" name="name" class="sizes col-md-4" ng-model="companies.insurancePurchaseObj.name" style="border:none;border-bottom:1px solid #000" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12" ng-if="companies.insurancePurchaseObj.name != null && companies.insurancePurchaseObj.name != ''" style="margin-top:30px;">
+                                    <div class="col-sm-5" style="text-align:right;">
+                                        My business name is
+                                    </div>
+                                    <div class="col-sm-3" style="text-align:left;">
+                                        <input type="text" id="businessName" name="businessName" ng-model="companies.insurancePurchaseObj.businessName" style="border:none;border-bottom:1px solid #000;width:100%;"/>
+                                    </div>
+                                    <div class="col-sm-4" style="text-align:left;">
+                                        and its address is
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12" ng-if="companies.insurancePurchaseObj.businessName != null && companies.insurancePurchaseObj.businessName != ''" style="margin-top:30px;">
+                                    <div class="col-md-12">
+                                        <input type="text" id="address" name="address" style="border:none;border-bottom:1px solid #000;width:660px;" ng-model="companies.insurancePurchaseObj.address" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12"  ng-if="companies.insurancePurchaseObj.address != null && companies.insurancePurchaseObj.address != ''" style="margin-top:30px;">
+                                    <div class="col-sm-5" style="text-align:right;">
+                                        and it is a 
+                                    </div>
+                                    <div class="col-sm-6" align="left">
+                                        <select  id="reportingSector" name="reportingSector" ng-model="companies.insurancePurchaseObj.businessType" ng-options="division.id as division.name for division in companies.types" class="vb_select"  >
+                                            <option value="">Please Select...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" ng-if="companies.insurancePurchaseObj.businessType != null" style="margin-top:30px;">
+                                    <div class="col-sm-5" align="right">
+                                        I can be reached at 
+                                    </div>
+                                    <div class="col-sm-3" align="left">
+                                        <input type="text" id="contactDetails" name="contactDetails" ng-model="companies.insurancePurchaseObj.contactDetails" style="border:none;border-bottom:1px solid #000;width:100%;"/>
+                                    </div>
+                                    <div class="col-sm-4" align="left">
+                                        and my 
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12" ng-if="companies.insurancePurchaseObj.contactDetails != null && companies.insurancePurchaseObj.contactDetails != ''" style="margin-top:30px;">
+                                    <div class="col-sm-5" align="right">
+                                        email is
+                                    </div>
+                                    <div class="col-sm-6" align="left">
+                                        <input type="text" id="email" name="email" style="border:none;border-bottom:1px solid #000;width:390px;"  ng-model="companies.insurancePurchaseObj.email" />
+                                    </div>
+
+                                </div>
+                                <div class="col-md-12" ng-if="companies.insurancePurchaseObj.email != null && companies.insurancePurchaseObj.email != ''" style="margin-top:30px;">
+                                    <div class="col-sm-5" style="text-align:right;">
+                                        My current insurance is with 
+                                    </div>
+                                    <div class="col-sm-6" align="left">
+                                        <select  id="currentInsurance" name="currentInsurance" ng-model="companies.insurancePurchaseObj.currentInsurance" ng-options="division.id as division.name for division in companies.currentInsuranceList" class="vb_select" >
+                                            <option value="">Please Select...</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </h3>
+                        </center>
+                        <br/>
+                    </div>    
+                    <br/><br/><br/>
+                    <div class="form-group col-md-12" >
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" id="btnContractReviewback" style="width: 150px" class="start_bt" ng-click="companies.backButtonForRatePage()" >Back</button>
+                        </div>
+                        <div class="col-md-5 pull-left" >
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToReviewBuyPage()" style="width:250px;" >Review and buy</button>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+</script>

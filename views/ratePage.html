@@ -1,0 +1,71 @@
+<div class="main_section" ng-init="companies.initRatePage()">
+
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate>
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                        <br/><br/>&nbsp;
+                        <div class="clearfix"></div>
+                        <center>
+                            <h1 style="font-size:60px;line-height:115px;" class="rate">
+                                Congratulation  <br/>                              
+                                Your insurance rate: $ {{companies.insuranceObject.insuranceRate}}/ month <br/>
+                                Policy start date: {{companies.insuranceObject.policyStartDate| date :angularDateFormat}} <br/>
+                                <div class="input-group col-md-2" style="margin-top: 25px !important;background:#fff;color:#000;">
+                                    <input type="text" id="receivedDate" name="receivedDate" class="date-picker form-control margin0 borderTRR0 borderBRR0" datepicker ng-model="companies.insuranceObject.policyStartDate" date-obj="companies.insuranceObject.policyStartDate" style="background:#fff;color:#000;">
+                                    <label for="receivedDate" id="rcdDate" class="input-group-addon btn" style="background:#0157AC;"><span class="glyphicon glyphicon-calendar white"></span></label>
+                                </div>
+                            </h1>
+                        </center>
+                        <div class="col-md-1">
+                        </div>
+                    </div>    
+                    <br/><br/><br/>
+                    <div class="form-group col-md-12" >
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" id="btnContractReviewback" style="width: 150px" class="start_bt" ng-click="companies.backButtonForNextPage()" >Back</button>
+                        </div>
+                        <div class="col-md-5 pull-left" >
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigatetoInsurancePurchasePage()" style="width:250px;">Purchase Insurance</button>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+</script>

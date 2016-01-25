@@ -1,0 +1,86 @@
+<div class="main_section" >
+
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate>
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()" >Start</button>
+                        </div>
+                        <br/><br/>&nbsp;
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-12" >
+                            <h3>Your business must comply with the below:</h3>
+                            <h4 style="line-height: 28px;"> - You are authorized to purchase and bind this insurance on behalf of the entity applying for coverage<br/>
+                                - Your business is not controlled or owned by any other firm, corporation, or entity<br/>
+                                - For the entire period of time that you have owned and controlled the business, you have not sold, purchased or acquired, discontinued, merged into or consolidated with another business<br/>
+                                - Your business:<br/>
+                                <p style="padding-left: 20px">
+                                    - have procedures in place to ensure that your software code does not infringe the software copyrights of others<br/>
+                                    - have your customers sign-off on deliverables<br/>
+                                    - have formal change management procedures<br/>
+                                    - have dedicated customer support<br/>
+                                    - use a written contract or statement of work<br/>
+                                </p>
+                                - Your contracts:<br/>
+                                <p style="padding-left: 20px">
+                                    - Are going through legal review<br/>
+                                    - Have indemnification clauses in your favor<br/>
+                                    - Clearly state the ownership rights, licensing, and use of any materials or intellectual property created for or during an engagement<br/>
+                                    - State that to the best of your knowledge any materials or intellectual property created are original and do not infringe upon the intellectual property rights of other<br/>
+                                </p>
+                                <br/>
+                                - I agree to accept delivery of the insurance policy and related documents via email to the address provided to Hiscox and agree to consent in electronic transactions.<br/>
+
+                                - I have read the information above and confirm it is correct. By checking this box and providing the premium payment I agree that I am entering into a binding agreement with Hiscox Insurance Company Inc.<br/>
+                                - I agree an comply with the above:<br/>
+                            </h4>
+                        </div>
+                    </div>    
+                    <br/><br/><br/>
+                    <div class="form-group col-md-12" >
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-2 pull-left">
+                            <button type="button" id="btnContractReviewback" style="width: 150px; padding:6px 30px;margin-top:30px;" class="start_bt" ng-click="companies.backButtonForPurchaseInsurance()" >Back</button>
+                        </div>
+                        <div class="col-md-5 pull-left" >
+                            <button type="button" id="btnContractReview" style="width:315px; padding:6px 30px;margin-top:30px;" class="start_bt" ng-click="companies.navigateToPaymentPage()" >Continue To Payment</button><br/>
+                        </div>
+                        <div class="col-md-2">
+                            <br/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+</script>

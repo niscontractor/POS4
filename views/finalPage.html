@@ -1,0 +1,58 @@
+<div class="main_section" >
+
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate="">
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                        <br/><br/>&nbsp;
+                        <div class="clearfix"></div>
+                        <center>
+                            <h1 style="font-size:60px;">
+                                Thank You!  <br/>   
+
+                                Now relax, we got your back
+                            </h1>
+                            <br/> <br/> <br/> <br/> 
+                            <p style="font-size:30px; color:#514D4E;">Todo: Explain What going to happen next</p>
+                        </center>
+                        <div class="col-md-3">
+                            <button type="button" id="btnContractReviewback" style="width: 150px" class="start_bt" ng-click="companies.backButtonForPaymentPage()" >Back</button>
+                        </div>
+                    </div>    
+                    <br/><br/><br/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+</script>

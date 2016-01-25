@@ -1,0 +1,268 @@
+<div class="main_section" ng-init="companies.initPage2()">
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+        <div class="container top30">
+            <div class="row table_sections">
+                <form novalidate>
+                    <div class="table_section">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 head padding0">next insurance
+                            </h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-7 border_vb">
+                            <br/><br/>&nbsp;<br/><br/>
+                            <div class="form-group col-md-12">
+                                <div class="col-sm-4">
+                                    <div style="font-size: 20px">
+                                        Next 12m sales?
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <select name="minbeds" sliderwidget ng-model="companies.next12MSales" id="minbeds" ng-options="o for o in companies.next12mSalesList" >
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div style="font-size: 20px" >
+                                        Next 12m payroll?
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <select name="minbeds1" sliderwidget ng-model="companies.next12MPayroll" id="minbeds1" ng-options="o for o in companies.next12mpayrollList" >
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div style="font-size: 20px">
+                                        Biggest customer
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <select name="minbeds2" sliderwidget ng-model="companies.biggestCustomer" id="minbeds2" ng-options="o for o in companies.biggestCustomerList" >
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/><br/>&nbsp;
+                            <div class="form-group col-md-12">
+                                <div class="col-sm-4">
+                                    <div style="font-size: 20px">
+                                        Equipment Value?
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <select name="minbeds3" sliderwidget ng-model="companies.equipmentValue" id="minbeds3" ng-options="o for o in companies.equipmentValueList" >
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div style="font-size: 20px" >
+                                        Employees?
+                                    </div>
+                                    <br/>
+                                    <div>
+                                        <select name="minbeds4" sliderwidget ng-model="companies.employees" id="minbeds4" ng-options="o for o in companies.employeesList" >
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <br/><br/>&nbsp;
+                            <div class="form-group col-md-12" >
+                                <h3>Does your business conduct any of the following activities?</h3>
+                                <h4 style="line-height:28px;">- Domain Name Registration (DNS) Services <br/>
+                                    - Hosting, facilitating and conducting electronic auctions<br/>
+                                    - Internet content aggregator/web portal<br/>
+                                    - Internet search engine <br/>
+                                    - Internet/on-line publisher of content<br/>
+                                    - Payment processing services<br/>
+                                    - Smartphone/mobile phone/tablet application development <br/>
+                                    - Manufacture, design, or assist in the design of any hardware or components.<br/>
+                                    - Create, support, or work on software that executes securities transactions, makes medical diagnoses, or is involved in manufacturing or process control.<br/>
+                                    - Own, host, or run any website that contains any pornographic materials or user generated content.<br/>
+                                    - Own, or manage a social networking or auction website<br/>
+                                    - Operate as a Voice Over IP Service Provider<br/>
+                                    - Design, supply, manufacture, or distribute any property, tangible goods or products<br/>
+                                </h4>
+                            </div>
+                            <div class="form-group col-md-12" style="margin-top: 40px;margin-bottom:30px;">
+
+                                <input type="checkbox" name="test" switch ng-checked="false" data-handle-width="50px" data-label-width="50px" data-on-text="Yes" data-off-text="No" ng-model="companies.insuranceObject.activityConducted">
+
+                                <button type="button" id="btnContractReview" style="float: right;width:250px; padding:6px 30px;margin:0;" class="start_bt" ng-click="companies.navigateToRatePage()" >Next: Get Rate</button>
+                                
+                            </div>
+                            <div class="col-md-12"><button type="button" id="btnContractReviewback" style="float: right;width:150px; padding:6px 30px;margin:0;margin-right: 20px;" class="start_bt" ng-click="companies.backButtonForHomePage()" >Back</button>
+                            <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col-md-offset-1 col-md-12 col-sm-offset-0">
+                                <div class="col-md-12" style="font-size: 40px;" >
+                                    <div style="font-size: 28px;">
+                                        Estimated Rate <br/>
+                                    </div>
+                                    <span style="font-size: 70px;margin-left: 40px;">${{companies.estimatedRateObject.rate}}</span><span style="font-size:20px">/ month</span>		
+
+                                </div>
+                                <div class="col-md-12">
+                                    <div style="font-size: 23px;width: 290px;">
+                                        Applied discounts <br/><br/>
+                                    </div>
+
+                                    <!--<p style="font-size: 30px">$ 70 / month</p>-->
+                                </div>
+                                <div class="col-md-12"  >
+                                    <div style="font-size: 23px;">
+                                        Coverage 
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePlFlag"> PL: $ {{companies.estimatedRateObject.coveragePl}} /month
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coverageGlFlag"> GL: $ {{companies.estimatedRateObject.coverageGl}} /month
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePropertyFlag"> Property: $ {{companies.estimatedRateObject.coverageProperty}} /month
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="spacer"></div>
+<script>
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                //>=, not <=
+                if (scroll >= 30) {
+                    //clearHeader, not clearheader - caps H
+                    $(".gray-bg").addClass("absolute-menu");
+                    $(".logo_div").addClass('displayTrue');
+                    $(".navbar-collapse").css({
+                        'position': 'relative',
+                        'margin-top': '-30px'
+                    });
+                    $(".headerNotHome").addClass("full-bg");
+                    $(".logo_display").css("display", "none");
+                } else {
+                    $(".gray-bg").removeClass("absolute-menu");
+                    $(".logo_div").removeClass('displayTrue');
+                    $(".logo_display").css("display", "block");
+                    $(".headerNotHome").removeClass("full-bg");
+                }
+            });
+            $("[name='test']").bootstrapSwitch();
+</script>
+<script>
+            $(function () {
+                var select = $("#minbeds");
+                var slider = $("<div id='slider'></div>").insertAfter(select).slider({
+                    min: 1,
+                    value: 1,
+                    max: 5,
+                    range: "min",
+                    value: select[ 0 ].selectedIndex + 1,
+                            slide: function (event, ui) {
+                                var scope = angular.element($("#minbeds")).scope();
+                                scope.$apply(function () {
+                                    scope.companies.next12MSales = ui.value - 1;
+                                })
+                                select[ 0 ].selectedIndex = ui.value - 1;
+                            }
+                });
+                $("#minbeds").change(function () {
+                    slider.slider("value", this.selectedIndex + 1);
+                });
+
+            });
+            $(function () {
+                var select1 = $("#minbeds1");
+                var slider1 = $("<div id='slider1'></div>").insertAfter(select1).slider({
+                    min: 1,
+                    value: 1,
+                    max: 5,
+                    range: "min",
+                    value: select1[ 0 ].selectedIndex + 1,
+                            slide: function (event, ui) {
+                                var scope = angular.element($("#minbeds1")).scope();
+                                scope.$apply(function () {
+                                    scope.companies.next12MPayroll = ui.value - 1;
+                                })
+                                select1[ 0 ].selectedIndex = ui.value - 1;
+                            }
+                });
+                $("#minbeds1").change(function () {
+                    slider1.slider("value", this.selectedIndex + 1);
+                });
+            });
+            $(function () {
+                var select2 = $("#minbeds2");
+                var slider2 = $("<div id='slider2'></div>").insertAfter(select2).slider({
+                    min: 1,
+                    max: 5,
+                    value: 1,
+                    range: "min",
+                    value: select2[ 0 ].selectedIndex + 1,
+                            slide: function (event, ui) {
+                                var scope = angular.element($("#minbeds2")).scope();
+                                scope.$apply(function () {
+                                    scope.companies.biggestCustomer = ui.value - 1;
+                                })
+                                select2[ 0 ].selectedIndex = ui.value - 1;
+                            }
+                });
+                $("#minbeds2").change(function () {
+                    slider2.slider("value", this.selectedIndex + 1);
+                });
+            });
+            $(function () {
+                var select3 = $("#minbeds3");
+                var slider3 = $("<div id='slider3'></div>").insertAfter(select3).slider({
+                    min: 1,
+                    max: 5,
+                    value: 1,
+                    range: "min",
+                    value: select3[ 0 ].selectedIndex + 1,
+                            slide: function (event, ui) {
+                                var scope = angular.element($("#minbeds3")).scope();
+                                scope.$apply(function () {
+                                    scope.companies.equipmentValue = ui.value - 1;
+                                })
+                                select3[ 0 ].selectedIndex = ui.value - 1;
+                            }
+                });
+                $("#minbeds3").change(function () {
+                    slider3.slider("value", this.selectedIndex + 1);
+                });
+            });
+            $(function () {
+                var select4 = $("#minbeds4");
+                var slider4 = $("<div id='slider4'></div>").insertAfter(select4).slider({
+                    min: 1,
+                    max: 11,
+                    value: 1,
+                    range: "min",
+                    value: select4[ 0 ].selectedIndex + 1,
+                            slide: function (event, ui) {
+                                var scope = angular.element($("#minbeds4")).scope();
+                                scope.$apply(function () {
+                                    scope.companies.employees = ui.value - 1;
+                                })
+                                select4[ 0 ].selectedIndex = ui.value - 1;
+                            }
+                });
+                $("#minbeds4").change(function () {
+                    slider4.slider("value", this.selectedIndex + 1);
+                });
+            });
+
+
+</script>

@@ -1,0 +1,163 @@
+<div class="main_section" ng-init="companies.initializePage()">
+    <!--    <div>
+            {{welcomeMessage}}
+        </div>-->
+    <img id="bg-img-scroll" />
+    <div class="main-bg-img-orders"></div>
+    <div class="container-fluid main-bg-image ">
+
+        <div class="row table_sections">
+            <form novalidate>
+                <div class="table_section">
+
+                    <div class="container top30">
+                        <div class="col-md-12 padding0">
+                            <h4 class="col-md-8 col-sm-8 head padding0">next insurance</h4>
+                            <button type="button" id="btnContractReview" class="start_bt" ng-click="companies.navigateToHomePage()">Start</button>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="lightblue">
+                        <div class="container top30">
+                            <div class="col-md-7 border_vb">
+                                <div class="form-group">
+                                    <div class="col-md-12 customized">
+                                        Customized Insurance for your business
+                                    </div>
+                                    <div class="col-md-12 easiest">
+                                        The easiest way to get insurance for<br> Application Developers
+
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 location-main">
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Location?</div>
+                                        <div><input type="checkbox" name="test" ng-checked="true" data-handle-width="50px" data-label-width="50px" data-on-text="Office" data-off-text="Home" switch ng-model="companies.location"></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Zip?</div>
+                                        <div><input type="text" id="enquiryTitle" placeholder="e.g. 1997" style="width: 75%;height: 40px;background-color: #01387b; color:white;" name="enquiryTitle" class="form-control" ng-model="companies.insuranceObject.zip" /></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Other locations</div>
+                                        <div><select name="minbeds1" ng-change="companies.changeValue(companies.otherLocation)" ng-model="companies.otherLocation" id="minbeds1" ng-options="o for o in companies.otherLocationOptions" style="height: 40px"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 location-main">
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Currently Insured?</div>
+                                        <div><input type="checkbox" name="test" switch ng-checked="true" data-handle-width="50px" data-label-width="50px" data-on-text="Yes" data-off-text="No" ng-model="companies.insuranceObject.currentlyInsured"></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Claims in last 5 years?</div>
+                                        <div><input type="checkbox" name="test1" switch ng-checked="true" data-handle-width="50px" data-label-width="50px" data-on-text="Yes" data-off-text="No" ng-model="companies.insuranceObject.claimIn5Years"></div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="location">Start year?</div>
+                                        <div><input type="text" id="startYear" placeholder="e.g. 1997"  name="startYear" style="width: 75%;height: 40px;margin-left:20px; background-color: #01387b;color:white;" ng-model="companies.insuranceObject.startYear"  tabenter esg-auto-complete="auto" class="form-control margin0 borderTRR0 borderBRR0" >
+                                            <!--<input type="text" id="" placeholder="e.g. 1997" style="width: 50%;height: 150%" name="enquiryTitle" class="form-control" ng-model="companies.startYear" />-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-11" >
+                                    <button type="button" id="btnContractReview" style="float: right;width:200px; padding:6px 30px;" class="start_bt" ng-click="companies.navigateToDetails()">Continue</button>
+                                </div>
+                                <div class="clearfix"></div> 
+                            </div>
+                            <div class="col-md-5" >
+                                <div class="col-md-offset-1 col-md-12 col-sm-offset-0">
+                                    <div class="col-md-12" style="font-size: 40px;" >
+                                        <div class="estim">Estimated Rate <br/></div>
+                                        <span style="font-size: 70px;margin-left: 40px;">${{companies.estimatedRateObject.rate}}</span>
+                                        <span style="font-size:20px">/ month</span>
+                                    </div>
+                                    <div class="col-md-12" style="font-size: 40px" >
+                                        <div class="apply">Applied discounts <br/><br/></div>
+
+                                        <!--<p style="font-size: 30px">$ 70 / month</p>-->
+                                    </div>
+                                    <div class="col-md-12"  >
+                                        <div style="font-size: 23px;">
+                                            Coverage 
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePlFlag"> PL: $ {{companies.estimatedRateObject.coveragePl}} /month
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coverageGlFlag"> GL: $ {{companies.estimatedRateObject.coverageGl}} /month
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" style="width: 20px" ng-model="companies.estimatedRateObject.coveragePropertyFlag"> Property: $ {{companies.estimatedRateObject.coverageProperty}} /month
+                                        </div>
+                                        <div>
+                                            (todo: think of better names)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+</div>
+<div id="spacer"></div>
+<script>
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        //>=, not <=
+        if (scroll >= 30) {
+            //clearHeader, not clearheader - caps H
+            $(".gray-bg").addClass("absolute-menu");
+            $(".logo_div").addClass('displayTrue');
+            $(".navbar-collapse").css({
+                'position': 'relative',
+                'margin-top': '-30px'
+            });
+            $(".headerNotHome").addClass("full-bg");
+            $(".logo_display").css("display", "none");
+        } else {
+            $(".gray-bg").removeClass("absolute-menu");
+            $(".logo_div").removeClass('displayTrue');
+            $(".logo_display").css("display", "block");
+            $(".headerNotHome").removeClass("full-bg");
+        }
+    });
+    $("[name='test']").bootstrapSwitch();
+    $(function () {
+        var select1 = $("#minbeds1");
+        var slider1 = $("<div id='slider1'></div>").insertAfter(select1).slider({
+            min: 1,
+            value: 1,
+            max: 12,
+            range: "min",
+            value: select1[ 0 ].selectedIndex + 1,
+                    slide: function (event, ui) {
+                        var scope = angular.element($("#minbeds1")).scope();
+                        scope.$apply(function () {
+                            scope.companies.otherLocation = ui.value - 1;
+                        })
+                        select1[ 0 ].selectedIndex = ui.value - 1;
+                    }
+        });
+
+        $("#minbeds1").change(function () {
+            slider1.slider("value", this.selectedIndex + 1);
+        });
+
+        jQuery(document).ready(function ($) {
+
+            setTimeout(function () {
+                var scope = angular.element($("#minbeds1")).scope();
+                slider1.slider("value", scope.companies.otherLocation);
+            }, 1000);
+        });// ready 
+
+    });
+
+</script>

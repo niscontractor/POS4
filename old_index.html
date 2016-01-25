@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="insurance" ng-controller="MainController">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insurance</title>
+        <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="css/vendor/bootstrap.min.css" rel="stylesheet">        
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/bootslider.css" rel="stylesheet" type="text/css">
+        <link href="css/new-css.css" rel="stylesheet" type="text/css">
+        <link href="css/slider.css" rel="stylesheet" type="text/css">
+        <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+
+        <link href="css/bootstrap-switch.css" rel='stylesheet' type='text/css'>
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="http://getbootstrap.com/favicon.ico">
+    </head>
+    <body>
+        <!--  top nav -->
+        <nav class="navbar navbar-inverse" id="top-nav" ng-cloak>
+            <div class="container-fluid" >
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand user-welcome" href="">Welcome User</a>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        <!-- End top nav -->
+        <div>
+            <div id="page-wrapper">
+                <div id="page-inner" ng-view >
+                </div>      
+            </div>
+        </div>
+        <!--/. PAGE INNER-->  
+        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="js/vendor/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="js/thirdparty/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/thirdparty/jquery-ui/jquery-ui.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <!--ANGULAR-->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/angular/angular-route.js"></script>
+        <script src="js/angular/angular-resource.js"></script>
+        <script src="js/thirdparty/ng-flow-standalone.js"></script>
+        <script src="js/thirdparty/ui-bootstrap-custom-tpls-0.10.0.js"></script>
+        <script src="js/angular/bootstrap-switch.js"></script>
+        <script src="js/app.js"></script>
+        <!--Directives-->
+        <script src="js/directives/_directive.js"></script>
+        <script src="js/directives/slider.directive.js"></script>
+        <script src="js/directives/autocomplete.directive.js"></script>
+        <script src="js/directives/datepicker.directive.js"></script>
+        <!--Controllers-->
+        <script src="js/controllers/_controller.js"></script>
+        <script src="js/controllers/main.controller.js"></script>
+        <script src="js/controllers/insurance.controller.js"></script>
+        <!--Services-->
+        <script src="js/services/_service.js"></script>
+        <script src="js/services/discounts.service.js"></script>
+        <script src="js/services/estimateRate.service.js"></script>
+        <script src="js/services/insurance.service.js"></script>
+        <script src="js/services/insurancePurchaseDetails.service.js"></script>
+        <script src="js/services/paymentDetails.service.js"></script>
+    </body>
+</html>
